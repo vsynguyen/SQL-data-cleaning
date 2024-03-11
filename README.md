@@ -39,3 +39,27 @@ CREATE TABLE club_member_info (
 INSET INTO club_member_info_cleaned
 SELECT *
 FROM club_member_infor;
+```
+
+### Calculation for insight
+#### Top 10 popular jobs in data
+```sql
+SELECT job_title , COUNT(job_title)  AS 'popular jobs'
+FROM club_member_info_clean
+	GROUP BY job_title
+		LIMIT 10;
+```
+##### 	 The result 
+|job_title|popular jobs|
+|---------|------------|
+||39|
+|Account Coordinator|16|
+|Account Executive|8|
+|Account Representative I|3|
+|Account Representative II|8|
+|Account Representative III|1|
+|Account Representative IV|2|
+|Accountant I|7|
+|Accountant II|3|
+|Accountant III|5|
+
